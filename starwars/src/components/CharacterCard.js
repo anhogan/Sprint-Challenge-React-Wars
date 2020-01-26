@@ -1,10 +1,11 @@
 import React from 'react';
 import CharacterInfo from './CharacterInfo';
+// import CharacterFilms from './CharacterFilms';
 
 const CharacterCard = (props) => {
   return (
     <div>
-      {props.characters.map((character) => <CharacterInfo key={character.name} name={character.name} birth_year={character.birth_year} gender={character.gender} />)}
+      {props.characters.map((character) => <CharacterInfo key={character.name} name={character.name} birth_year={character.birth_year} gender={character.gender} films={character.films} />)}
     </div>
   )
 }

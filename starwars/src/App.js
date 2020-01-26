@@ -10,6 +10,8 @@ const App = () => {
   // the state properties here.
 
   const [characters, setCharacters] = useState([]);
+  const [films, setFilms] = useState([]);
+  console.log(films)
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -19,16 +21,27 @@ const App = () => {
     axios.get('https://swapi.co/api/people/?page=1')
       .then(response => {
         setCharacters(response.data.results)
+        setFilms(response.data.results)
       })
       .catch(error => {
         console.log(error.message)
       })
-  });
+  }, []);
+
+  useEffect(() => {
+    films.map((film) => {
+      axios.get(film)
+      .then(response => {
+        console.log(response.data); 
+        setFilms(response.data)})
+        .catch(error => {
+          console.log(error.message)})});
+  }, []);
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <CharacterCard characters={characters}/>
+      <CharacterCard characters={characters} films={films}/>
       <NextButton />
       <PreviousButton />
     </div>
