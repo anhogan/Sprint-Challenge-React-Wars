@@ -1,4 +1,7 @@
 import React from 'react';
+import CharacterCard from './components/CharacterCard';
+import NextButton from './components/NextButton';
+import PreviousButton from './components/PreviousButton';
 import './App.css';
 
 const App = () => {
