@@ -42,8 +42,8 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <CharacterCard characters={characters} films={films}/>
-      <NextButton />
       <PreviousButton />
+      <NextButton />
     </div>
   );
 }
