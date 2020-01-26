@@ -57,7 +57,7 @@ const App = () => {
       })
       .catch(error => {
         console.log(error.message)
-      })
+      }, [])
   };
 
   function nextPage() {
@@ -69,7 +69,7 @@ const App = () => {
       })
       .catch(error => {
         console.log(error.message)
-      })
+      }, [])
   };
 
   return (
