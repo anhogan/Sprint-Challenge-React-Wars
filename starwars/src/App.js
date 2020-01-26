@@ -9,24 +9,11 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
-  const [object, setObject] = useState([]);
   const [characters, setCharacters] = useState([]);
-  const [films, setFilms] = useState([]);
 
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-
-  useEffect(() => {
-    axios.get('https://swapi.co/api/people/?page=1')
-      .then(response => {
-        console.log(response.data)
-        setObject(response.data)
-      })
-      .catch(error => {
-        console.log(error.message)
-      })
-  }, []);
 
   useEffect(() => {
     axios.get('https://swapi.co/api/people/?page=1')
@@ -36,16 +23,6 @@ const App = () => {
       .catch(error => {
         console.log(error.message)
       })
-  }, []);
-
-  useEffect(() => {
-    films.map((film) => {
-      axios.get(film)
-      .then(response => {
-        console.log(response.data); 
-        setFilms(response.data.results)})
-        .catch(error => {
-          console.log(error.message)})});
   }, []);
 
   function previousPage() {
@@ -57,7 +34,7 @@ const App = () => {
       })
       .catch(error => {
         console.log(error.message)
-      }, [])
+      }, [previousPage])
   };
 
   function nextPage() {
@@ -69,13 +46,13 @@ const App = () => {
       })
       .catch(error => {
         console.log(error.message)
-      }, [])
+      }, [nextPage])
   };
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <CharacterCard characters={characters} films={films}/>
+      <CharacterCard characters={characters} />
       <PreviousButton previous={previousPage} />
       <NextButton next={nextPage} />
     </div>
