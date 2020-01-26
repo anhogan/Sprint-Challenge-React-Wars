@@ -5,7 +5,7 @@ const CharacterInfo = (props) => {
 
   return (
     <Container>
-      <Row>
+      <Row className="m-2">
         <Col md={{ size: 8, order: 2, offset: 2 }}>
           <Card>
             <CardBody>
