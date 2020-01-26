@@ -1,8 +1,10 @@
 import React from 'react';
 
-const CharacterFilms = () => {
+const CharacterFilms = (props) => {
   return (
-    <div></div>
+    <div>
+      
+    </div>
   )
 }
 
