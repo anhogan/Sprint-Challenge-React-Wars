@@ -26,13 +26,25 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React JS is a library that enables developers to build more visually appealing and interactive applications. It works to make coding easier and more re-usable by having components render in JSX (similar to HTML) and referencing key values, such as state or props, in the same way that JS ES6 works to reference dynamic variables or string literals. Styled components even bring in the basics of CSS to customize how each part of the application works.
+It tries to solve the problem of repeating code to make different components for a single application. The process of simply referencing an imported component allows de-bugging to be easier by being able to narrow in on a specific aspect that isn’t working instead of having to work through each part of the application.
+
+
 - [ ] What does it mean to _think_ in react?
+
+Thinking in React refers to how you design the layout of your application. Looking at what components need to be built, where state will live, and how props will get passed down in order to make the most DRY, re-usable, and clear code.
 
 - [ ] Describe state.
 
+State is part of your code that can change depending on specific actions taken by a user. The new value, or “state”, can then be updated within your application without the need to re-establish new parameters or data for the changed effects. It can simply be rendered with the updated value.
+
 - [ ] Describe props.
 
+Props are properties that are passed from one component to another without having to re-establish the value in each file. They can be used to reference specific part of a data set, to style components, or to simply set the value of an object.
+
 - [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+Side effects are anything that affects a component outside the scope of the function being executed. You can sync effects to state, or prop, changes by adding in a dependency array to the end of the useEffect hook with a reference to either state, or props.
 
 ## Project Set Up
 
